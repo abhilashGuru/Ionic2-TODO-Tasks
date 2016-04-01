@@ -1,0 +1,37 @@
+<ion-toolbar primary>
+    <ion-title>
+        {{label}} Task
+    </ion-title>
+    <ion-buttons start>
+        <button light (click)="close()">
+            <span showWhen="ios">Cancel</span>
+            <ion-icon name="close" showWhen="android"></ion-icon>
+        </button>
+    </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+
+    <ion-list>
+    
+        <ion-item>
+            <ion-label stacked>Task</ion-label>
+            <ion-input type="text" [(ngModel)]="task"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label>Priority</ion-label>
+            <ion-select [(ngModel)]="priority">
+                <ion-option value="high">High</ion-option>
+                <ion-option value="normal">Normal</ion-option>
+                <ion-option value="low">Low</ion-option>
+            </ion-select>
+        </ion-item>
+        
+    </ion-list>
+    
+    <div padding>
+        <button full round (click)="saveTask()">Save</button>
+    </div>
+    
+</ion-content>
