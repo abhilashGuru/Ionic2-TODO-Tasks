@@ -1,14 +1,13 @@
-<ion-navbar primary *navbar>
-  <ion-title>
-    TODO Task
-  </ion-title>
-    
+<ion-header >
+  <ion-navbar primary>
+    <ion-title>TODO Task</ion-title>
     <ion-buttons end>
-        <button (click)="showModal()">
+      <button (click)="showModal()">
             <ion-icon name="add-circle"></ion-icon>
         </button>
     </ion-buttons>
-</ion-navbar>
+  </ion-navbar>
+</ion-header>
 
 <ion-content>
   
@@ -19,7 +18,7 @@
             <p>Click <ion-icon name="add-circle"></ion-icon> to add task.</p>
         </ion-item>
         
-        <ion-item-sliding *ngFor="#t of tasks">
+        <ion-item-sliding *ngFor="let t of tasks">
             <ion-item>
                 <ion-toggle checked = "{{(t.status=='pending') ? false : true}}" (click)="doneTask(t.id, t.status)"></ion-toggle>
                 <ion-label>
